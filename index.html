@@ -61,7 +61,7 @@
         <div class="col-lg-8 ftco-animate">
           <div class="text w-100 text-center mb-md-5 pb-md-5">
             <h1 class="mb-4">Быстрый и простой способ арендовать автомобиль</h1>
-            <p style="font-size: 18px;">сего несколько кликов, без лишней бюрократии. Выбирайте авто, оформляйте аренду
+            <p style="font-size: 18px;">Всего несколько кликов, без лишней бюрократии. Выбирайте авто, оформляйте аренду
               онлайн и отправляйтесь в путь!</p>
             <a href="https://api.whatsapp.com/send/?phone=996706202415&text=%D0%9F%D0%B8%D1%88%D1%83+%D0%B2%D0%B0%D1%81+%D1%81+%D1%81%D0%B0%D0%B9%D1%82%D0%B0%21&type=phone_number&app_absent=0"
               class="icon-wrap d-flex align-items-center mt-4 justify-content-center">
@@ -85,34 +85,40 @@
         <div class="col-md-12	featured-top">
           <div class="row no-gutters">
             <div class="col-md-4 d-flex align-items-center">
-              <form action="#" class="request-form ftco-animate bg-primary">
-                <h2>Make your trip</h2>
+              <form id="whatsapp-form" class="request-form ftco-animate bg-primary">
+                <h2>Совершите свое путешествие</h2>
+
+                <!-- <div class="form-group">
+                  <label class="label">Pick-up location</label>
+                  <input type="text" id="pickup" class="form-control" placeholder="City, Airport, Station, etc">
+                </div> -->
+
                 <div class="form-group">
-                  <label for="" class="label">Pick-up location</label>
-                  <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+                  <label class="label">Куда собираетесь ездить</label>
+                  <input type="text" id="dropoff" class="form-control" placeholder="City, Airport, Station, etc">
                 </div>
-                <div class="form-group">
-                  <label for="" class="label">Drop-off location</label>
-                  <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                </div>
+
                 <div class="d-flex">
                   <div class="form-group mr-2">
-                    <label for="" class="label">Pick-up date</label>
-                    <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
+                    <label class="label">Дата получения</label>
+                    <input type="text" id="pickup_date" class="form-control" placeholder="Date">
                   </div>
                   <div class="form-group ml-2">
-                    <label for="" class="label">Drop-off date</label>
-                    <input type="text" class="form-control" id="book_off_date" placeholder="Date">
+                    <label class="label">Дата возврата</label>
+                    <input type="text" id="dropoff_date" class="form-control" placeholder="Date">
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="" class="label">Pick-up time</label>
-                  <input type="text" class="form-control" id="time_pick" placeholder="Time">
+                  <label class="label">Время получения</label>
+                  <input type="text" id="pickup_time" class="form-control" placeholder="Time">
                 </div>
+
                 <div class="form-group">
-                  <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                  <button type="submit" class="btn btn-secondary py-3 px-4">Забронировать сейчас</button>
                 </div>
               </form>
+
             </div>
             <div class="col-md-8 d-flex align-items-center">
               <div class="services-wrap rounded-right w-100">
@@ -469,6 +475,27 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const dropoff = document.getElementById('dropoff').value;
+      const pickupDate = document.getElementById('pickup_date').value;
+      const dropoffDate = document.getElementById('dropoff_date').value;
+      const pickupTime = document.getElementById('pickup_time').value;
+
+      const message = `🚗 *Заявка на аренду авто*%0A
+*Куда собираетесь ездить:* ${dropoff}%0A
+*Дата получения:* ${pickupDate}%0A
+*Дата возврата:* ${dropoffDate}%0A
+*Время получения:* ${pickupTime}`;
+
+      const phoneNumber = '+996706202415'; // ← замени на свой номер без +
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+      window.open(url, '_blank');
+    });
+  </script>
 
 </body>
 
