@@ -1,0 +1,11 @@
+# Разрешаем всё
+User-agent: *
+Allow: /
+
+# Запрещаем доступ к техническим директориям
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+
+# Указываем путь к sitemap
+Sitemap: https://carent.kg/sitemap.xml
