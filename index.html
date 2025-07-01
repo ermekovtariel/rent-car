@@ -27,6 +27,12 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+
+
+
+  <link rel="stylesheet" href="path/to/owl.carousel.min.css">
+  <link rel="stylesheet" href="path/to/owl.theme.default.min.css">
+
 </head>
 
 <body>
@@ -493,6 +499,35 @@
       window.open(url, '_blank');
     });
   </script>
+  <script>
+    $(document).ready(function () {
+      var owl = $('.carousel-car');
+
+      owl.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        nav: false, // отключаем встроенные стрелки
+        dots: false,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 3 }
+        }
+      });
+
+      // Подключаем кастомные кнопки
+      $('.owl-next-custom').click(function () {
+        owl.trigger('next.owl.carousel');
+      });
+
+      $('.owl-prev-custom').click(function () {
+        owl.trigger('prev.owl.carousel');
+      });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="path/to/owl.carousel.min.js"></script>
 
 </body>
 

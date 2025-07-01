@@ -8569,12 +8569,23 @@ h1, h2, h3, h4, h5,
         border-radius: 50%; }
       .owl-carousel .owl-dots .owl-dot.active {
         background: #b3b3b3; }
-  .owl-carousel:hover .owl-nav .owl-prev,
-  .owl-carousel:hover .owl-nav .owl-next {
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next {
     opacity: 1; }
-  .owl-carousel:hover .owl-nav .owl-prev {
+  .owl-carousel .owl-nav .owl-prev {
     left: -25px; }
-  .owl-carousel:hover .owl-nav .owl-next {
+  
+  @media (max-width: 1200px) {
+    .owl-carousel .owl-nav .owl-prev {
+      left: -12px!important; 
+    } 
+    .owl-carousel .owl-nav .owl-next {
+      right: -12px !important; 
+    }
+  }
+  
+        
+  .owl-carousel .owl-nav .owl-next {
     right: -25px; }
 
 .owl-custom-nav {
