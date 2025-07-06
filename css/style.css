@@ -3525,7 +3525,7 @@ input[type="button"].btn-block {
   height: 1.5em;
   vertical-align: middle;
   content: "";
-  background: no-repeat center center;
+  background: no-repeat right center;
   background-size: 100% 100%; }
 
 @media (max-width: 575.98px) {
@@ -8360,7 +8360,7 @@ h1, h2, h3, h4, h5,
   background-position: top center; }
   @media (max-width: 1199.98px) {
     .hero-wrap {
-      background-position: center center !important; } }
+      background-position: right center !important; } }
   .hero-wrap .overlay {
     position: absolute;
     top: 0;
@@ -9002,7 +9002,9 @@ h1, h2, h3, h4, h5,
 @media (max-width: 767.98px) {
   .img-2 {
     height: 600px;
-    margin-bottom: 40px; } }
+    margin-bottom: 40px; 
+  }
+}
 
 .services-wrap {
   padding: 4em 3em;
@@ -9338,7 +9340,7 @@ textarea.form-control {
 .user-img {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: right center; }
 
 .testimony-section {
   position: relative; }
@@ -9504,7 +9506,7 @@ textarea.form-control {
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: right center;
   position: relative;
   display: block;
   width: 100%;
